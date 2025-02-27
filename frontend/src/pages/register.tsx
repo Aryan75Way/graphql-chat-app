@@ -1,7 +1,9 @@
+import SignupForm from "@/components/forms/SignupForm"
+
 const Register = () => {
   return (
-    <div>
-      Register
+    <div className="p-4 bg-emerald-100 rounded-lg w-96 shadow-2xl">
+      <SignupForm/>
     </div>
   )
 }

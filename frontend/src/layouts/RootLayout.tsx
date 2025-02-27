@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { useAppSelector } from "@/store/store";
 
 const RootLayout = () => {
-  const isAuthenticated = true;
+  const { isAuthenticated } = useAppSelector((state) => state.auth);
   const navigation = useNavigate();
 
   useEffect(() => {

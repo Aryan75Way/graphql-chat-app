@@ -11,6 +11,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useDispatch } from "react-redux";
+import { logout } from "@/store/reducers/authReducer";
 
 // Menu items.
 const items = [
@@ -22,6 +24,11 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  }
   return (
     <Sidebar>
       <SidebarContent>
@@ -45,7 +52,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SidebarMenuButton>
+        <SidebarMenuButton onClick={handleLogout}>
           <div className="flex items-center gap-1">
             <LogOut size={16} />
             <span>Sign out</span>
