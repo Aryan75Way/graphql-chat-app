@@ -17,9 +17,11 @@ const RootLayout = () => {
     return (
       <SidebarProvider>
         <AppSidebar />
-        <main>
-          <SidebarTrigger />
-          <Outlet/>
+        <main className="bg-emerald-200 w-full">
+          <div className="absolute bottom-2 right-2 bg-emerald-500 rounded-full p-1">
+            <SidebarTrigger className="hover:bg-transparent"/>
+          </div>
+          <Outlet/> 
         </main>
       </SidebarProvider>
     );

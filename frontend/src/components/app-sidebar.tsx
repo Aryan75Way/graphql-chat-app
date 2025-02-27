@@ -1,24 +1,25 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Home, LogOut } from "lucide-react";
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 // Menu items.
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
-]
+];
 
 export function AppSidebar() {
   return (
@@ -43,6 +44,14 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>
+        <SidebarMenuButton>
+          <div className="flex items-center gap-1">
+            <LogOut size={16} />
+            <span>Sign out</span>
+          </div>
+        </SidebarMenuButton>
+      </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
