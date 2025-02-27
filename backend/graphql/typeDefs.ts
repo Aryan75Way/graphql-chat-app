@@ -16,6 +16,7 @@ export const typeDefs = `#graphql
   type Query {
     me: User
     messages(receiverId: ID!): [Message!]!
+    getUserIdByEmail(email: String!): ID!
   }
 
   type Mutation {

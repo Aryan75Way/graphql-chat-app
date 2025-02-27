@@ -27,6 +27,14 @@ export const resolvers = {
                 orderBy: { createdAt: 'asc' },
             })
         },
+        getUserIdByEmail: async (_: any, { email }: { email: string }, context: any) => {
+            if (!context.user) throw new GraphQLError('Unauthorized')
+    
+            const user = await prisma.user.findUnique({ where: { email } })
+            if (!user) throw new GraphQLError('User not found')
+    
+            return user.id
+        },
     },
     Mutation: {
         register: async (
